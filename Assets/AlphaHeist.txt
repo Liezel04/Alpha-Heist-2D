@@ -1,0 +1,40 @@
+===============================================================================
+                         24 BIT GAMES 
+===============================================================================
+Candidate: Magda Liezel Goosen
+Project: Alpha Heist (2D Side-Scrolling Action Slice)
+===============================================================================
+
+-------------------------------------------------------------------------------
+1. ARCHITECTURAL HIGHLIGHTS & ENGINE OPTIMIZATIONS
+-------------------------------------------------------------------------------
+* ADVANCED OBJECT POOLING: Engineered high-performance, garbage-collector-safe 
+  projectile mechanics ('PlayerAttack.cs' and 'Fireball.cs'). Projectiles are 
+  dynamically cached and toggled via frame-state metrics rather than using heavy 
+  instantiation footprints, maintaining absolute CPU efficiency during high-action combat loops.
+
+* SYSTEM SINGLETONS: Anchored cross-scene orchestration layers cleanly utilizing uniform 
+  global state control configurations ('AudioManager.Instance' and 'LoadingScreen.Instance') 
+  to securely manage audio mixing and spatial transition memory buffers without resetting themes.
+
+* CORE PLAYER VITALS & UI SEQUENCING: The werewolf player character safely tracks health 
+  points, processing damage inputs, damage triggers, and invulnerability frames. 
+  Upon running out of hearts, the system halts timescales and activates the Game Over defeat 
+  UI panel seamlessly.
+
+* CLEAN ARCHITECTURAL DISCONNECT: System routing logic loops are fully modularized and decoupled. 
+  Level retry systems, UI controllers, and end-game victory pipelines are structurally 
+  isolated to prevent layout crossover bugs and cross-contamination errors.
+
+-------------------------------------------------------------------------------
+2. CORE SYSTEM SCRIPT MAPPING
+-------------------------------------------------------------------------------
+* StartGame.cs          -> Complete navigation loops, timescale freezes, UI card triggers.
+* Health.cs             -> Vitals tracking, multi-layer invulnerability buffers, death cycles.
+* PlayerMovement.cs     -> Physics vector translation loops, layout flipping, score thresholds.
+* AudioManager.cs       -> Dynamic audio bus transitions, hardware stream attenuation management.
+* LoadingScreen.cs      -> Asynchronous temporal buffer frames and scene sequence loads.
+* PrologueController.cs -> Automated non-blocking temporal countdown routines.
+
+===============================================================================
+
